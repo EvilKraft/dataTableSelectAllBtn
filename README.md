@@ -1,1 +1,1 @@
-# dataTableSelectAllBtn
+# dtSelectAllBtn
