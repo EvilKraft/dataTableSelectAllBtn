@@ -1,0 +1,13 @@
+{
+	"name": "EvilKraft/dtSelectAllBtn",
+	"type": "datatable-plugin",
+	"description": "Select All button for datatable",
+	"keywords": ["datatable"],
+	"license": "GPL-2.0+",
+	"homepage": "https://github.com/EvilKraft/dtSelectAllBtn",
+	"support": {
+	  "issues": "https://github.com/EvilKraft/dtSelectAllBtn/issues",
+	  "source": "https://github.com/EvilKraft/dtSelectAllBtn"
+	},
+	"require": { }
+}
