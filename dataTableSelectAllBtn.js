@@ -1,7 +1,7 @@
 /**
  * Created by Kraft on 02.09.2016.
  */
-let style = document.createElement('style');
+var style = document.createElement('style');
 style.innerHTML = `
   .dtRowSelectNone::before   {font-family: "Font Awesome 5 Free"; font-size: 1.33em; font-weight: 400; content: "\\f0c8";}
   .dtRowSelectNotAll::before {font-family: "Font Awesome 5 Free"; font-size: 1.33em; font-weight: 400; content: "\\f146";}
@@ -26,8 +26,8 @@ jQuery.fn.dataTable.ext.buttons.select_all = {
 		// .DT namespace listeners are removed by DataTables automatically on table destroy
 		dt.on( 'draw.dt.DT select.dt.DT deselect.dt.DT', function () {
 			if ( that.select.items() === 'row' ) {
-				let count_all      = that.rows().count();
-				let count_selected = that.rows({selected: true}).count();
+				var count_all      = that.rows().count();
+				var count_selected = that.rows({selected: true}).count();
 
 				if(count_selected == count_all){
 					that.text('<span class="dtRowSelectAll"></span>');
