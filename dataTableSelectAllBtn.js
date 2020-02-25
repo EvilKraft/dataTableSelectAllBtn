@@ -3,9 +3,9 @@
  */
 var style = document.createElement('style');
 style.innerHTML = `
-  .dtRowSelectNone::before   {font-family: "Font Awesome 5 Free"; font-size: 1.33em; font-weight: 400; content: "\\f0c8";}
-  .dtRowSelectNotAll::before {font-family: "Font Awesome 5 Free"; font-size: 1.33em; font-weight: 400; content: "\\f146";}
-  .dtRowSelectAll::before    {font-family: "Font Awesome 5 Free"; font-size: 1.33em; font-weight: 400; content: "\\f14a";}
+  .dtRowSelectNone::before   {font-family: "Font Awesome 5 Free"; font-size: 1em; font-weight: 400; content: "\\f0c8";}
+  .dtRowSelectNotAll::before {font-family: "Font Awesome 5 Free"; font-size: 1em; font-weight: 400; content: "\\f146";}
+  .dtRowSelectAll::before    {font-family: "Font Awesome 5 Free"; font-size: 1em; font-weight: 400; content: "\\f14a";}
 `;
 document.head.appendChild(style);
 
