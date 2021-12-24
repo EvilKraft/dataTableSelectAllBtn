@@ -1,14 +1,6 @@
 /**
  * Created by Kraft on 02.09.2016.
  */
-style = document.createElement('style');
-style.innerHTML = `
-	.dtRowSelectNone::before   {font-family: "Font Awesome 5 Free"; content: "\\f0c8"; font-weight: 400; font-size: 1.33em; line-height: .75em; vertical-align: -.0667em;}
-	.dtRowSelectNotAll::before {font-family: "Font Awesome 5 Free"; content: "\\f146"; font-weight: 400; font-size: 1.33em; line-height: .75em; vertical-align: -.0667em;}
-	.dtRowSelectAll::before    {font-family: "Font Awesome 5 Free"; content: "\\f14a"; font-weight: 400; font-size: 1.33em; line-height: .75em; vertical-align: -.0667em;}
-`;
-document.head.appendChild(style);
-
 jQuery.fn.dataTable.ext.buttons.select_all = {
 	page: 'all',
 
@@ -23,6 +15,17 @@ jQuery.fn.dataTable.ext.buttons.select_all = {
 		}
 	},
 	init: function ( dt , node, config ) {
+		let style = document.createElement('style');
+		style.innerHTML = `
+			.dtRowSelectNone::before, .dtRowSelectNotAll::before, .dtRowSelectAll::before{
+				font-family: "Font Awesome 5 Free"; font-weight: 400; font-size: 1.33em; line-height: .75em; vertical-align: -.0667em;
+			}
+			.dtRowSelectNone::before   {content: "\\f0c8";}
+			.dtRowSelectNotAll::before {content: "\\f146";}
+			.dtRowSelectAll::before    {content: "\\f14a";}
+		`;
+		document.head.appendChild(style);
+
 		let that = this;
 
 		// .DT namespace listeners are removed by DataTables automatically on table destroy
@@ -44,5 +47,6 @@ jQuery.fn.dataTable.ext.buttons.select_all = {
 				}
 			}
 		});
-	}
+	},
+
 };
