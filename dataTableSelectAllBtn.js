@@ -15,17 +15,6 @@ jQuery.fn.dataTable.ext.buttons.select_all = {
 		}
 	},
 	init: function ( dt , node, config ) {
-		let style = document.createElement('style');
-		style.innerHTML = `
-			.dtRowSelectNone::before, .dtRowSelectNotAll::before, .dtRowSelectAll::before{
-				font-family: "Font Awesome 5 Free"; font-weight: 400; font-size: 1.33em; line-height: .75em; vertical-align: -.0667em;
-			}
-			.dtRowSelectNone::before   {content: "\\f0c8";}
-			.dtRowSelectNotAll::before {content: "\\f146";}
-			.dtRowSelectAll::before    {content: "\\f14a";}
-		`;
-		document.head.appendChild(style);
-
 		let that = this;
 
 		// .DT namespace listeners are removed by DataTables automatically on table destroy
@@ -35,14 +24,14 @@ jQuery.fn.dataTable.ext.buttons.select_all = {
 				const count_selected = that.rows({page: config.page, selected: true}).count();
 
 				if(count_selected === count_all){
-					that.text('<span class="dtRowSelectAll"></span>');
+					that.text('<i class="far fa-check-square"></i>');
 					that[0].node.setAttribute('title', that.i18n('buttons.selectNone', 'Deselect all'));
 				}else if(count_selected > 0){
-					that.text('<span class="dtRowSelectNotAll"></span>');
+					that.text('<i class="far fa-minus-square"></i>');
 					that[0].node.setAttribute('title', that.i18n('buttons.selectAll', 'Select All'));
 				}
 				else{
-					that.text('<span class="dtRowSelectNone"></span>');
+					that.text('<i class="far fa-square"></i>');
 					that[0].node.setAttribute('title', that.i18n('buttons.selectAll', 'Select All'));
 				}
 			}
